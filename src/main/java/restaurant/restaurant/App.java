@@ -3,6 +3,7 @@ package restaurant.restaurant;
 import java.awt.EventQueue;
 
 import view.Authentification;
+import view.MainClass;
 
 /**
  * Hello world!
@@ -14,7 +15,7 @@ public class App
     {
     	Class.forName("org.postgresql.Driver");
         EventQueue.invokeLater(() -> {
-        	Authentification authentification = new Authentification();
+        	MainClass.getMainClass();
         });
     }
 }
