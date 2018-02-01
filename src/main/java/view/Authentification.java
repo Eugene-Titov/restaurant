@@ -22,7 +22,10 @@ import db.DB;
 public class Authentification extends Form {
 	
 	private static Authentification AUTHENTIFICATION = new Authentification();
-	public static Authentification getAuthentification() { return AUTHENTIFICATION; }	
+	public static Authentification getAuthentification() { return AUTHENTIFICATION; }
+	
+	private static int id_user = -1;
+	public static int getCurrentUser() { return id_user; }
 	
 	private JTextField user = null;
 	private JPasswordField pass = null;
@@ -53,7 +56,7 @@ public class Authentification extends Form {
 				super.keyPressed(e);
 				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
 					try {						
-						int id_user = DB.getIdUser(user.getText(), new String(pass.getPassword()));
+						id_user = DB.getIdUser(user.getText(), new String(pass.getPassword()));
 						if(user.getText().equals("admin") && id_user > -1) MainClass.getMainClass().setCurrentForm(AdminForm.getAdminForm());
 						else if(id_user > -1) MainClass.getMainClass().setCurrentForm(UserForm.getUserForm());
 						else clear();
