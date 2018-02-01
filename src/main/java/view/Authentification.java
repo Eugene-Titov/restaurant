@@ -55,7 +55,7 @@ public class Authentification extends Form {
 					try {						
 						int id_user = DB.getIdUser(user.getText(), new String(pass.getPassword()));
 						if(user.getText().equals("admin") && id_user > -1) MainClass.getMainClass().setCurrentForm(AdminForm.getAdminForm());
-						else if(id_user > -1);
+						else if(id_user > -1) MainClass.getMainClass().setCurrentForm(UserForm.getUserForm());
 						else clear();
 					} catch (ClassNotFoundException e1) {
 						// TODO Auto-generated catch block
