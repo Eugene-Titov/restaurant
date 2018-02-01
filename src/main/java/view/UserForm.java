@@ -1,12 +1,14 @@
 package view;
 
+import java.awt.GridLayout;
+
 public class UserForm extends Form {
 	
 	private static UserForm USERFORM = new UserForm();
 	public static UserForm getUserForm() { return USERFORM; }
 
 	private UserForm() {
-		setLayout()
+		setLayout(new GridLayout(1, 1));
 	}
 	
 	@Override
